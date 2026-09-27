@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GameTimer : MonoBehaviour
 {
-    public PlayerStats stats;
     public TextMeshProUGUI timerText;
     public bool gameOver = false;
 
@@ -12,18 +11,17 @@ public class GameTimer : MonoBehaviour
 
     void Start()
     {
-        playerTransform = stats.transform;
         startPosition = playerTransform.position;
     }
     void Update()
     {
         if(gameOver) return;
 
-        stats.time -= Time.deltaTime;
+        PlayerStats.time -= Time.deltaTime;
 
-        if(stats.time <= 0)
+        if(PlayerStats.time <= 0)
         {
-            stats.time = 0;
+            PlayerStats.time = 0;
             TimeRanOut();
         }
 
@@ -32,13 +30,13 @@ public class GameTimer : MonoBehaviour
 
     void UpdateTimerDisplay()
     {
-        timerText.text = stats.time.ToString("F1");
+        timerText.text = PlayerStats.time.ToString("F1");
     }
 
     void TimeRanOut()
     {
-        playerTransform.position = startPosition;
-        stats.time = stats.GetMaxTime();
+        PlayerStats.time = PlayerStats.GetMaxTime();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //Debug.Log("Time ran out, you died!)");
         //We can change this later to a scene or overlay
     }

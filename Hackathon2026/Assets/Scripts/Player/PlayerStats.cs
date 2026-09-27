@@ -3,32 +3,28 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] float maxTime = 0f;
-    public float time;
-    public int ammo;
-    public float moveSpeed;
-    public float cooldown = 2f;
-    public float duration = 0.5f;
-
-    float startTime;
+    public static float maxTime = 10f;
+    public static float time;
+    public static int ammo;
+    public static float moveSpeed;
+    public static float cooldown = 2f;
+    public static float duration = 0.5f;
 
     void Start()
     {
-        startTime = maxTime;
-
-        maxTime = startTime + 10 * ShopUpgrades.timeUpgrades;
+        maxTime += 10 * ShopUpgrades.timeUpgrades;
 
         time = maxTime;
     }
 
-    public void SetMaxTime(int min, int sec)
+    public static void SetMaxTime(int min, int sec)
     {
         maxTime += min * 60;
         maxTime += sec;
         time = maxTime;
     }
     
-    public void AddTime(float amount)
+    public static void AddTime(float amount)
     {
         time += amount;
     }
@@ -38,9 +34,9 @@ public class PlayerStats : MonoBehaviour
         moveSpeed = 3 + (ShopUpgrades.speedUpgrades * 2);
     }
     
-    public float GetMaxTime()
+    public static float GetMaxTime()
     {
-        maxTime = startTime + 10 * ShopUpgrades.timeUpgrades;
+        maxTime += 10 * ShopUpgrades.timeUpgrades;
         return maxTime;
     }
 }

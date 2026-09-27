@@ -6,18 +6,16 @@ public class PlayerMove : MonoBehaviour
     Vector2 direction;
     Rigidbody2D rb;
     SpriteRenderer sr;
-    PlayerStats stats;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-
-        stats = GetComponent<PlayerStats>();
     }
 
     void Update()
     {
-        speed = stats.moveSpeed;
+        speed = PlayerStats.moveSpeed;
 
         direction = Vector2.zero;
 

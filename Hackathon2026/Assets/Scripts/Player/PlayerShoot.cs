@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     private BulletMove bullet;
-    private PlayerStats stats;
     private float cooldown = 0f;
     private float duration = 0f;
     [SerializeField] private ParticleSystem psStart;
@@ -13,7 +12,6 @@ public class PlayerShoot : MonoBehaviour
     void Start()
     {
         bullet = GetComponentInChildren<BulletMove>();
-        stats = GetComponentInChildren<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -32,13 +30,13 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && cooldown <= 0f)
         {
-            cooldown = stats.cooldown;
-            duration = stats.duration;
+            cooldown = PlayerStats.cooldown;
+            duration = PlayerStats.duration;
 
             ParticleSystem.MainModule main = psStart.main;
-            main.duration = stats.duration;
+            main.duration = PlayerStats.duration;
             main = psEnd.main;
-            main.duration = stats.duration;
+            main.duration = PlayerStats.duration;
             psStart.Play();
             psEnd.Play();
         }

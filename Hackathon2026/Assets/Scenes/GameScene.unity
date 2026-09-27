@@ -783,12 +783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda9a1425be798a4d962cd5da7f72f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  maxTime: 10
-  time: 0
-  ammo: 0
-  moveSpeed: 0
-  cooldown: 0.5
-  duration: 0.5
 --- !u!61 &505830424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -373890,10 +373884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8faf1ff17f7bb42aff54a205b2327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  stats: {fileID: 505830423}
   timerText: {fileID: 1942120265}
   gameOver: 0
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 505830419}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1933799491
 GameObject:

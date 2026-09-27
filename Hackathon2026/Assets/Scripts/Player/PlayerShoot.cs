@@ -1,11 +1,24 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+<<<<<<< Updated upstream
     [SerializeField] GameObject bulletInstance;
     void Start()
     {
         
+=======
+    private BulletMove bullet;
+    private PlayerStats stats;
+    private float cooldown = 0f;
+    [SerializeField] private ParticleSystem psStart;
+    [SerializeField] private ParticleSystem psEnd;
+    void Start()
+    {
+        bullet = GetComponentInChildren<BulletMove>();
+        stats = GetComponentInChildren<PlayerStats>();
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -21,7 +34,19 @@ public class PlayerShoot : MonoBehaviour
 
         //transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && cooldown <= 0)
+        {
+            ParticleSystem.MainModule main = psStart.main;
+            main.duration = stats.cooldown;
+            main = psEnd.main;
+            main.duration = stats.cooldown;
+            psStart.Play();
+            psEnd.Play();
+
+            cooldown = stats.cooldown;
+        }
+        
+        if (cooldown > 0)
         {
             GameObject bullet = Instantiate(bulletInstance);
 
@@ -29,6 +54,15 @@ public class PlayerShoot : MonoBehaviour
 
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
+<<<<<<< Updated upstream
+=======
+            bullet.ShootLaser();
+
+            cooldown -= 1 * Time.deltaTime;
+        } else
+        {
+            bullet.Clear2DRay();
+>>>>>>> Stashed changes
         }
     }
 }

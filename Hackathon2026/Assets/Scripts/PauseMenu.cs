@@ -4,7 +4,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
     private bool isPaused = false;
-
+    private BulletMove bullet;
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        
         pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;

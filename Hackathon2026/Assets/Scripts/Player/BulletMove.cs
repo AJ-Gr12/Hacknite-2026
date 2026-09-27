@@ -2,25 +2,32 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] float duration;
+    public Transform laserFirePoint;
+    public LineRenderer lr;
+    Transform t;
 
-    void Start()
+    private void Awake()
     {
-        Destroy(gameObject, 3);
+        t = GetComponent<Transform>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShootLaser()
     {
-        transform.position += transform.right * Time.deltaTime * speed;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Bug")
+        if (Physics2D.Raycast(t.position, transform.right))
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            RaycastHit2D hit = Physics2D.Raycast(t.position, t.right);
+            Draw2DRay(t.position, hit.point);
+        } else
+        {
+            Draw2DRay(t.position, t.transform.right * 100);
         }
+    }
+
+    void Draw2DRay(Vector2 startPos, Vector2 endPos)
+    {
+        lr.SetPosition(0, startPos);
+        lr.SetPosition(1, endPos);
     }
 }

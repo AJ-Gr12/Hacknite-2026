@@ -16,15 +16,15 @@ public class BulletMove : MonoBehaviour
 
     public void ShootLaser()
     {
-        if (Physics2D.Raycast(t.position, transform.right))
+        if (Physics2D.Raycast(t.position, transform.right, 5))
         {
-            RaycastHit2D hit = Physics2D.Raycast(t.position, transform.right);
+            RaycastHit2D hit = Physics2D.Raycast(t.position, transform.right, 5);
             Draw2DRay(t.position, hit.point);
             if(hit.collider.tag == "Bug")
                 Destroy(hit.collider.gameObject);
         } else
         {
-            Draw2DRay(t.position, t.position + (t.right * 20));
+            Draw2DRay(t.position, t.position + (t.right * 5));
         }
     }
     

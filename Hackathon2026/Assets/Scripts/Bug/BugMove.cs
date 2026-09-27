@@ -54,10 +54,9 @@ public class BugMove : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D (Collision2D collision)
     {
-        print(collision);
-        if (collision.gameObject.CompareTag("Bug"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerStats.death();
         }

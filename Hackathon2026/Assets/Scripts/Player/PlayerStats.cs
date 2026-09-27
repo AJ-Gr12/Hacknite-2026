@@ -8,10 +8,21 @@ public class PlayerStats : MonoBehaviour
     public int ammo;
     public float moveSpeed;
 
-    void setMaxTime(int min, int sec)
+    void Start()
+    {
+        time = maxTime;
+    }
+
+    public void SetMaxTime(int min, int sec)
     {
         maxTime += min * 60;
         maxTime += sec;
+        time = maxTime;
+    }
+    
+    public void AddTime(float amount)
+    {
+        time += amount;
     }
 
     void Update()

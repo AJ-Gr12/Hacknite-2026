@@ -54,7 +54,6 @@ public class Animations : MonoBehaviour
         else
         {
             animator.SetBool("IsMoving", true);
-
         }
     }
 }

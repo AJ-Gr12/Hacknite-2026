@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,9 +19,10 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mouseScreenPos = Input.mousePosition;
+        mouseScreenPos.z = Math.Abs(Camera.main.transform.position.z - transform.position.z);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
         mousePos.z = 0f; 
-
 
         Vector2 direction = mousePos - transform.position;
 

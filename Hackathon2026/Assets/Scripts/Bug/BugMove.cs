@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class BugMove : MonoBehaviour
 {
     public float speed = 3f;
     public float chaseRadius = 5f;
@@ -46,5 +46,11 @@ public class EnemyMovement : MonoBehaviour
         } else if (direction.x < 0) {
             transform.localScale = new Vector3(-1, 1, 1);
         }
+
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle - 90);
+
+
     }
 }

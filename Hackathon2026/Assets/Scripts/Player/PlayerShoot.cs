@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    [SerializeField] GameObject bulletInstance;
+    private BulletMove bullet;
     void Start()
     {
-        
+        bullet = GetComponentInChildren<BulletMove>();
     }
 
     // Update is called once per frame
@@ -23,11 +23,10 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = Instantiate(bulletInstance);
-
-            bullet.transform.position = transform.position;
-
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+             bullet.ShootLaser();
+
 
         }
     }

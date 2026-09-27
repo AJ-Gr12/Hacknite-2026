@@ -42,11 +42,9 @@ public class PlayerShoot : MonoBehaviour
         if (cooldown > 0)
         {
 
-            bullet.transform.position = transform.position;
-
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-            //bullet.ShootLaser();
+            bullet.ShootLaser();
 
             cooldown -= 1 * Time.deltaTime;
         } else

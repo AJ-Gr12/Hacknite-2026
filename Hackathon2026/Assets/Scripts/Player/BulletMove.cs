@@ -15,15 +15,18 @@ public class BulletMove : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void ShootLaser()
     {
-        if(collision.tag == "Bug")
+        if (Physics2D.Raycast(t.position, transform.right))
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            RaycastHit2D hit = Physics2D.Raycast(t.position, t.right);
+            Draw2DRay(t.position, hit.point);
+        } else
+        {
+            Draw2DRay(t.position, t.right * 20);
         }
     }
-
+    
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
         lr.positionCount = 2;

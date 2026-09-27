@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class ShopText : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] TextMeshProUGUI speedText;
+    [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] TextMeshProUGUI timeText;
     void Start()
     {
         
@@ -11,6 +14,26 @@ public class ShopText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        speedText.text = "Speed " + UpgradeCount(3, 8);
+        ammoText.text = "Ammo  " + UpgradeCount(2, 8);
+        timeText.text = "Time  " + UpgradeCount(4, 8);
+    }
+
+
+    string UpgradeCount(int count, int max)
+    {
+        string text = "[";
+        for(int i = 0; i < count; i++)
+        {
+            text += "+ ";
+        }
+
+        for (int i = 0; i < max - count; i++)
+        {
+            text += "- ";
+        }
+        text += "]";
+
+        return text;
     }
 }

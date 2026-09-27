@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform playerTransform;
     private Rigidbody2D rb;
 
-    void start()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void update()
+    void Update()
     {
         if (playerTransform == null) return;
 

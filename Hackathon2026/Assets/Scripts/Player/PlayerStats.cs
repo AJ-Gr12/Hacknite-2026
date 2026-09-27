@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour
     public float time;
     public int ammo;
     public float moveSpeed;
+    public float cooldown = 0.5f;
 
     void Start()
     {

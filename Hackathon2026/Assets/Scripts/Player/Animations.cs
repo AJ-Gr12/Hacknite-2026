@@ -41,10 +41,11 @@ public class Animations : MonoBehaviour
         {
             animator.SetBool("IsForward", true);
         }
-        if(direction.y < 0)
+        if(direction.y < 0 && direction.x == 0)
         {
             animator.SetBool("IsForward", false);
         }
+        
 
         if(direction == Vector2.zero)
         {

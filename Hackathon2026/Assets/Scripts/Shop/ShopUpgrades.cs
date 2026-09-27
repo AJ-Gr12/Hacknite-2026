@@ -18,6 +18,12 @@ public class ShopUpgrades : MonoBehaviour
             return;
         }
 
+        ammoUpgrades = 0;
+        timeUpgrades = 0;
+        speedUpgrades = 0;
+
+        hacks = 0;
+
         instance = gameObject;
         DontDestroyOnLoad(gameObject);
     }
@@ -26,11 +32,7 @@ public class ShopUpgrades : MonoBehaviour
 
     void Start()
     {
-        ammoUpgrades = 0;
-        timeUpgrades = 0;
-        speedUpgrades = 0;
-
-        hacks = 50;
+        
     }
 
     // Update is called once per frame

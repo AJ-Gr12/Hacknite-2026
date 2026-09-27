@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
      float speed;
-
+    Vector2 direction;
     Rigidbody2D rb;
     SpriteRenderer sr;
     PlayerStats stats;
@@ -19,7 +19,7 @@ public class PlayerMove : MonoBehaviour
     {
         speed = stats.moveSpeed;
 
-        Vector2 direction = Vector2.zero;
+        direction = Vector2.zero;
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -44,7 +44,10 @@ public class PlayerMove : MonoBehaviour
         }
 
         direction = direction.normalized;
+    }
 
+    void FixedUpdate()
+    {
         rb.linearVelocity = direction * speed;
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShopUpgrades : MonoBehaviour
 {
-
+    public static int hacks;
     public static int ammoUpgrades;
     public static int timeUpgrades;
     public static int speedUpgrades;
@@ -29,6 +29,8 @@ public class ShopUpgrades : MonoBehaviour
         ammoUpgrades = 0;
         timeUpgrades = 0;
         speedUpgrades = 0;
+
+        hacks = 50;
     }
 
     // Update is called once per frame

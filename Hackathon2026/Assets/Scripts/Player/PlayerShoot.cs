@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
 
         //transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0)
+        if (Input.GetMouseButtonDown(0) && cooldown <= 0f)
         {
             ParticleSystem.MainModule main = psStart.main;
             main.duration = stats.cooldown;
@@ -37,11 +37,11 @@ public class PlayerShoot : MonoBehaviour
             psEnd.Play();
 
             cooldown = stats.cooldown;
+            print(cooldown);
         }
         
         if (cooldown > 0)
         {
-
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
             bullet.ShootLaser();

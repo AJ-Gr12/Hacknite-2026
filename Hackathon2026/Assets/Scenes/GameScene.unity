@@ -696,7 +696,7 @@ Transform:
   m_GameObject: {fileID: 505830417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.03, y: -1.89, z: 0}
+  m_LocalPosition: {x: -10.05, y: -1.89, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -373217,7 +373217,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &1000606361
+--- !u!1001 &1010091983
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -373227,11 +373227,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 175519174037258215, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2467453
+      value: 1.62073
       objectReference: {fileID: 0}
     - target: {fileID: 175519174037258215, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12469894
+      value: -1.0698
       objectReference: {fileID: 0}
     - target: {fileID: 175519174037258215, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -373268,22 +373268,6 @@ PrefabInstance:
     - target: {fileID: 4302452542323950975, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
       propertyPath: m_Name
       value: Bug
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274862469486859729, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
-      propertyPath: m_Size.x
-      value: 0.35735226
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274862469486859729, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
-      propertyPath: m_Size.y
-      value: 0.4216392
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274862469486859729, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.029673576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274862469486859729, guid: 87add56dde05c4244aaebbdbb87864e6, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.0013316274
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -373936,7 +373920,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 505830419}
   - {fileID: 69635604}
-  - {fileID: 1000606361}
+  - {fileID: 1010091983}
   - {fileID: 2024821035}
   - {fileID: 961452638}
   - {fileID: 1541045219}

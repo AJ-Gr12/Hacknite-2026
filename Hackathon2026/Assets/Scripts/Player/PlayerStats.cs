@@ -26,5 +26,9 @@ public class PlayerStats : MonoBehaviour
         time += amount;
     }
 
+    void Update()
+    {
+        moveSpeed = 3 + (ShopUpgrades.speedUpgrades * 2);
+    }
     
 }

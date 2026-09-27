@@ -34,6 +34,8 @@ public class PlayerMove : MonoBehaviour
             direction += new Vector2(1, 0);
         }
 
+        direction = direction.normalized;
+
         rb.linearVelocity = direction * speed;
     }
 }

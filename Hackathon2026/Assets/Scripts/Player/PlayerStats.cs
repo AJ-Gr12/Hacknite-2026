@@ -10,8 +10,14 @@ public class PlayerStats : MonoBehaviour
     public float cooldown = 2f;
     public float duration = 0.5f;
 
+    float startTime;
+
     void Start()
     {
+        startTime = maxTime;
+
+        maxTime = startTime + 10 * ShopUpgrades.timeUpgrades;
+
         time = maxTime;
     }
 
@@ -34,6 +40,7 @@ public class PlayerStats : MonoBehaviour
     
     public float GetMaxTime()
     {
+        maxTime = startTime + 10 * ShopUpgrades.timeUpgrades;
         return maxTime;
     }
 }

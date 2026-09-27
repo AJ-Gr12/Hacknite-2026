@@ -7,6 +7,14 @@ public class GameTimer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public bool gameOver = false;
 
+    public Transform playerTransform;
+    public Vector3 startPosition;
+
+    void Start()
+    {
+        playerTransform = stats.transform;
+        startPosition = playerTransform.position;
+    }
     void Update()
     {
         if(gameOver) return;
@@ -16,7 +24,6 @@ public class GameTimer : MonoBehaviour
         if(stats.time <= 0)
         {
             stats.time = 0;
-            gameOver = true;
             TimeRanOut();
         }
 
@@ -30,7 +37,9 @@ public class GameTimer : MonoBehaviour
 
     void TimeRanOut()
     {
-        Debug.Log("Time ran out, you died!)");
+        playerTransform.position = startPosition;
+        stats.time = stats.GetMaxTime();
+        //Debug.Log("Time ran out, you died!)");
         //We can change this later to a scene or overlay
     }
 }

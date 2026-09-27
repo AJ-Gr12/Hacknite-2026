@@ -32,4 +32,8 @@ public class PlayerStats : MonoBehaviour
         moveSpeed = 3 + (ShopUpgrades.speedUpgrades * 2);
     }
     
+    public float GetMaxTime()
+    {
+        return maxTime;
+    }
 }

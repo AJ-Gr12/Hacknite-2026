@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
     private BulletMove bullet;
     private PlayerStats stats;
     private float cooldown = 0f;
+    private float duration = 0f;
     [SerializeField] private ParticleSystem psStart;
     [SerializeField] private ParticleSystem psEnd;
     void Start()
@@ -29,27 +30,31 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && cooldown <= 0f)
         {
+            cooldown = stats.cooldown;
+            duration = stats.duration;
+
             ParticleSystem.MainModule main = psStart.main;
-            main.duration = stats.cooldown;
+            main.duration = stats.duration;
             main = psEnd.main;
-            main.duration = stats.cooldown;
+            main.duration = stats.duration;
             psStart.Play();
             psEnd.Play();
-
-            cooldown = stats.cooldown;
-            print(cooldown);
         }
         
-        if (cooldown > 0)
+        if (duration > 0)
         {
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
             bullet.ShootLaser();
 
-            cooldown -= 1 * Time.deltaTime;
+            duration -= 1 * Time.deltaTime;
         } else
         {
             bullet.Clear2DRay();
+            if (cooldown > 0)
+            {
+                cooldown -= 1 * Time.deltaTime;
+            }
         }
     }
 }

@@ -5,9 +5,11 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float speed;
 
     Rigidbody2D rb;
+    SpriteRenderer sr;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -27,11 +29,13 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             direction += new Vector2(-1, 0);
+            sr.flipX = true;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             direction += new Vector2(1, 0);
+            sr.flipX = false;
         }
 
         direction = direction.normalized;

@@ -2,30 +2,17 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    [SerializeField] float speed;
-=======
     [SerializeField] float duration;
     [SerializeField] ParticleSystem psStart;
     [SerializeField] ParticleSystem psEnd;
     public Transform laserFirePoint;
     public LineRenderer lr;
     Transform t;
->>>>>>> Stashed changes
 
     void Start()
     {
-<<<<<<< Updated upstream
-        Destroy(gameObject, 3);
-=======
         t = GetComponent<Transform>();
->>>>>>> Stashed changes
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += transform.right * Time.deltaTime * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,8 +23,6 @@ public class BulletMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
-<<<<<<< Updated upstream
-=======
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
@@ -51,5 +36,4 @@ public class BulletMove : MonoBehaviour
     {
         lr.positionCount = 0;
     }
->>>>>>> Stashed changes
 }

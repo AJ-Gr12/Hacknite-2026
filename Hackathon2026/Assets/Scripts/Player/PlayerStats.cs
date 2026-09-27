@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour
     public float time;
     public int ammo;
     public float moveSpeed;
+    public float cooldown = 0.5f;
 
     void Start()
     {
@@ -25,5 +26,9 @@ public class PlayerStats : MonoBehaviour
         time += amount;
     }
 
+    void Update()
+    {
+        moveSpeed = 3 + (ShopUpgrades.speedUpgrades * 2);
+    }
     
 }

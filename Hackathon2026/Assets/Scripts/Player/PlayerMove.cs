@@ -2,18 +2,23 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] float speed;
+     float speed;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
+    PlayerStats stats;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
+        stats = GetComponent<PlayerStats>();
     }
 
     void Update()
     {
+        speed = stats.moveSpeed;
+
         Vector2 direction = Vector2.zero;
 
         if (Input.GetKey(KeyCode.W))

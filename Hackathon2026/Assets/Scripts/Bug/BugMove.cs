@@ -53,4 +53,13 @@ public class BugMove : MonoBehaviour
 
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print(collision);
+        if (collision.gameObject.CompareTag("Bug"))
+        {
+            PlayerStats.death();
+        }
+    }
 }

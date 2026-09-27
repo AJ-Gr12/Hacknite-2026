@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 public class GameTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
@@ -35,8 +34,7 @@ public class GameTimer : MonoBehaviour
 
     void TimeRanOut()
     {
-        PlayerStats.time = PlayerStats.GetMaxTime();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerStats.death();
         //Debug.Log("Time ran out, you died!)");
         //We can change this later to a scene or overlay
     }

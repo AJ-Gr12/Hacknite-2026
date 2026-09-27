@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -38,5 +39,11 @@ public class PlayerStats : MonoBehaviour
     {
         maxTime += 10 * ShopUpgrades.timeUpgrades;
         return maxTime;
+    }
+
+    public static void death()
+    {
+        time = GetMaxTime();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

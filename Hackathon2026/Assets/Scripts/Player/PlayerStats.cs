@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        maxTime += 10 * ShopUpgrades.timeUpgrades;
+        maxTime = 10 + 10 * ShopUpgrades.timeUpgrades;
 
         time = maxTime;
     }
@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour
     
     public static float GetMaxTime()
     {
-        maxTime += 10 * ShopUpgrades.timeUpgrades;
+        maxTime = 10 + 10 * ShopUpgrades.timeUpgrades;
         return maxTime;
     }
 

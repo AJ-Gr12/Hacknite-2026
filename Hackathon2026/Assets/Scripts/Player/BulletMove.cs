@@ -20,7 +20,8 @@ public class BulletMove : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(t.position, transform.right);
             Draw2DRay(t.position, hit.point);
-            Destroy(hit.collider.gameObject);
+            if(hit.collider.tag == "Bug")
+                Destroy(hit.collider.gameObject);
         } else
         {
             Draw2DRay(t.position, t.position + (t.right * 20));

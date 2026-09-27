@@ -12,13 +12,13 @@ public class EnterShop : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && !inShop)
+        if (Input.GetKeyDown(KeyCode.E) && !inShop)
         {
             SceneManager.LoadScene("ShopScene", LoadSceneMode.Additive);
             inShop = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && inShop)
+        else if (Input.GetKeyDown(KeyCode.E) && inShop)
         {
             SceneManager.UnloadSceneAsync("ShopScene");
             inShop = false;

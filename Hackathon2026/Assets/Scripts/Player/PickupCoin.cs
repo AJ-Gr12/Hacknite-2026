@@ -18,7 +18,7 @@ public class PickupCoin : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            ShopUpgrades.hacks++;
+            ShopUpgrades.hacks += 5;
             Destroy(gameObject);
         }
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class BugMove : MonoBehaviour
 {
     public float speed = 3f;
     public float chaseRadius = 5f;

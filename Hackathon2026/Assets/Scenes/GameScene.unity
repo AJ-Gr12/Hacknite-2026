@@ -546,6 +546,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 892169615039037074, guid: cfd68b156f44e4744bc620a674a1e283, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225266190400735806, guid: cfd68b156f44e4744bc620a674a1e283, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290443264303596310, guid: cfd68b156f44e4744bc620a674a1e283, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6489001462430067646, guid: cfd68b156f44e4744bc620a674a1e283, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -623,7 +635,7 @@ GameObject:
   - component: {fileID: 505830424}
   - component: {fileID: 505830425}
   - component: {fileID: 505830426}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1149,7 +1161,7 @@ GameObject:
   - component: {fileID: 759888612}
   - component: {fileID: 759888611}
   - component: {fileID: 759888613}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374063,8 +374075,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Time
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dcb53290ebd684d4a8bc82d74fb09cef, type: 2}
-  m_sharedMaterial: {fileID: 7673326247558693629, guid: dcb53290ebd684d4a8bc82d74fb09cef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -374151,7 +374163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024821035}
   - component: {fileID: 2024821034}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

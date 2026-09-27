@@ -14,28 +14,6 @@ public class BulletMove : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos()
-    {
-        // 1. Save the original matrix so you don't corrupt other gizmos
-        Matrix4x4 originalMatrix = Gizmos.matrix;
-
-        // 2. Set the gizmo matrix to match the object's local-to-world transform
-        Gizmos.matrix = transform.localToWorldMatrix;
-
-        // 3. Draw your visual indicator (e.g., a wire cube or a directional ray)
-        Gizmos.color = Color.cyan;
-        
-        // Notice we pass Vector3.zero as the center because the matrix defines the origin
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(1f, 1f, 2f)); 
-
-        Gizmos.color = Color.red;
-        // Draw a line pointing forward to explicitly show direction/rotation
-        Gizmos.DrawLine(Vector3.zero, Vector3.forward * 2f);
-
-        // 4. Reset the matrix back to default
-        Gizmos.matrix = originalMatrix;
-    }
-
     public void ShootLaser()
     {
         if (Physics2D.Raycast(t.position, transform.right))

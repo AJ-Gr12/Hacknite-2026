@@ -14,4 +14,13 @@ public class BulletMove : MonoBehaviour
     {
         transform.position += transform.right * Time.deltaTime * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Bug")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 }

@@ -1,11 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] float maxTime = 0f;
-    public static float time;
-    public static int ammo;
-    public static float moveSpeed;
+    public float time;
+    public int ammo;
+    public float moveSpeed;
 
     void setMaxTime(int min, int sec)
     {
@@ -13,8 +14,5 @@ public class PlayerStats : MonoBehaviour
         maxTime += sec;
     }
 
-    void Start()
-    {
-
-    }
+    
 }

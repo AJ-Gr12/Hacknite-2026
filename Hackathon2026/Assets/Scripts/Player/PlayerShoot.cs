@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerShoot : MonoBehaviour
     private float duration = 0f;
     [SerializeField] private ParticleSystem psStart;
     [SerializeField] private ParticleSystem psEnd;
+    public Slider cooldownBar;
     void Start()
     {
         bullet = GetComponentInChildren<BulletMove>();
@@ -32,6 +34,8 @@ public class PlayerShoot : MonoBehaviour
         {
             cooldown = PlayerStats.cooldown;
             duration = PlayerStats.duration;
+            cooldownBar.maxValue = duration + cooldown;
+            cooldownBar.value = 0;
 
             ParticleSystem.MainModule main = psStart.main;
             main.duration = PlayerStats.duration;
@@ -48,12 +52,15 @@ public class PlayerShoot : MonoBehaviour
             bullet.ShootLaser();
 
             duration -= 1 * Time.deltaTime;
+
+            cooldownBar.value += Time.deltaTime;
         } else
         {
             bullet.Clear2DRay();
             if (cooldown > 0)
             {
                 cooldown -= 1 * Time.deltaTime;
+                cooldownBar.value += Time.deltaTime;
             }
         }
     }

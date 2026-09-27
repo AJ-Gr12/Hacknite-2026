@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopText : MonoBehaviour
 {
@@ -47,10 +48,7 @@ public class ShopText : MonoBehaviour
 
         hackCount.text = "HackCoin: " + ShopUpgrades.hacks;
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            print("Exit shop");
-        }
+        
     }
 
 

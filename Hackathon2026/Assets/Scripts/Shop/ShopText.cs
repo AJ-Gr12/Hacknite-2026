@@ -1,8 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopText : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI hackCount;
+    [Space]
     [SerializeField] TextMeshProUGUI speedText;
     [SerializeField] TextMeshProUGUI ammoText;
     [SerializeField] TextMeshProUGUI timeText;
@@ -15,6 +18,8 @@ public class ShopText : MonoBehaviour
     [SerializeField] GameObject timeButton;
     [SerializeField] GameObject ammoButton;
     [SerializeField] GameObject speedButton;
+
+
 
     int speedPrice;
     int ammoPrice;
@@ -37,9 +42,13 @@ public class ShopText : MonoBehaviour
         ammoPrice = 5 + 5 * ShopUpgrades.ammoUpgrades;
 
         
-        if(ShopUpgrades.timeUpgrades < 5) timePriceText.text = timePrice + " Hacks";
-        if (ShopUpgrades.ammoUpgrades < 5) ammoPriceText.text = ammoPrice + " Hacks";
-        if (ShopUpgrades.speedUpgrades < 5) speedPriceText.text = speedPrice + " Hacks";
+        if(ShopUpgrades.timeUpgrades < 5) timePriceText.text = timePrice + " HackCoin";
+        if (ShopUpgrades.ammoUpgrades < 5) ammoPriceText.text = ammoPrice + " HackCoin";
+        if (ShopUpgrades.speedUpgrades < 5) speedPriceText.text = speedPrice + " HackCoin";
+
+        hackCount.text = "HackCoin: " + ShopUpgrades.hacks;
+
+        
     }
 
 
@@ -66,6 +75,10 @@ public class ShopText : MonoBehaviour
 
     public void TimeUpgrade()
     {
+        if (ShopUpgrades.hacks < timePrice) return;
+
+        ShopUpgrades.hacks -= timePrice;
+
         ShopUpgrades.timeUpgrades++;
         if (ShopUpgrades.timeUpgrades >= 5)
         {
@@ -76,6 +89,10 @@ public class ShopText : MonoBehaviour
 
     public void AmmoUpgrade()
     {
+        if (ShopUpgrades.hacks < ammoPrice) return;
+
+        ShopUpgrades.hacks -= ammoPrice;
+
         ShopUpgrades.ammoUpgrades++;
         if (ShopUpgrades.ammoUpgrades >= 5)
         {
@@ -86,6 +103,10 @@ public class ShopText : MonoBehaviour
 
     public void SpeedUpgrade()
     {
+        if (ShopUpgrades.hacks < speedPrice) return;
+
+        ShopUpgrades.hacks -= speedPrice;
+
         ShopUpgrades.speedUpgrades++;
         if (ShopUpgrades.speedUpgrades >= 5)
         {
